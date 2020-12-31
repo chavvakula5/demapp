@@ -1,0 +1,39 @@
+﻿@model IEnumerable<dempapps.Models.WeatherModel>
+
+@{
+    ViewData["Title"] = "Weather";
+}
+
+<h1>Weather</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.cod)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.message)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cod)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.message)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
